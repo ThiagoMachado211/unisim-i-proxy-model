@@ -1,0 +1,40 @@
+{
+  "input_file": "C:\\Users\\Usu\u00e1rio\\Desktop\\UNISIM_PROXY_PROJECT\\data\\extracted\\summary_timeseries.parquet",
+  "output_file": "C:\\Users\\Usu\u00e1rio\\Desktop\\UNISIM_PROXY_PROJECT\\data\\processed\\summary_timeseries_std.parquet",
+  "n_rows_in": 118280,
+  "n_rows_out": 118280,
+  "n_cases": 20,
+  "wells_found": [
+    "I1",
+    "I2",
+    "I3",
+    "I4",
+    "I5",
+    "I6",
+    "NA1A",
+    "NA2",
+    "NA3D",
+    "RJS19"
+  ],
+  "vars_found": [
+    "WBHP",
+    "WOPR",
+    "WWIR",
+    "WWPR"
+  ],
+  "missing_wells": [],
+  "missing_vars": [],
+  "n_duplicates": 0,
+  "n_negative_nonneg_vars": 0,
+  "dt_days_stats": {
+    "count": 117480.0,
+    "mean": 24.868913857677903,
+    "std": 9.39570882058417,
+    "min": 1.0,
+    "50%": 30.0,
+    "90%": 31.0,
+    "99%": 31.0,
+    "max": 31.0
+  },
+  "note": "No resampling performed; time grid preserved. Next step can resample to a common grid if desired."
+}

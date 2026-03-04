@@ -1,0 +1,5 @@
+Validation artifacts generated:
+- C:\Users\Usuário\Desktop\UNISIM_PROXY_PROJECT\reports\metrics\metrics_global.csv
+- C:\Users\Usuário\Desktop\UNISIM_PROXY_PROJECT\reports\metrics\metrics_by_variable.csv
+- C:\Users\Usuário\Desktop\UNISIM_PROXY_PROJECT\reports\metrics\metrics_by_case.csv
+- Curves/scatters/MAE-over-time in C:\Users\Usuário\Desktop\UNISIM_PROXY_PROJECT\reports\figures

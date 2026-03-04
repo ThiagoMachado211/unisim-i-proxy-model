@@ -1,0 +1,21 @@
+# python
+__pycache__/
+*.pyc
+
+# jupyter
+.ipynb_checkpoints
+
+# environment
+venv/
+.env
+
+# large data
+data/raw/*
+data/processed/*.parquet
+
+# models
+models/saved_models/*.joblib
+
+# system
+.DS_Store
+Thumbs.db

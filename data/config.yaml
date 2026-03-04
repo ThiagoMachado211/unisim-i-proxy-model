@@ -1,0 +1,38 @@
+project:
+  name: UNISIM_PROXY_PROJECT
+
+paths:
+  raw_cases_dir: data/raw
+  extracted_dir: data/extracted
+  processed_dir: data/processed
+  features_dir: data/features
+  reports_dir: reports
+
+cases:
+  pattern: "CASE_\\d{2}"     # detecta pastas de casos automaticamente
+  id_regex: "CASE_(\\d{2})"  # extrai o 01..20
+
+eclipse:
+  required_files_any_of:
+    - ["SMSPEC", "UNSMRY"]   # alguns casos usam UNSMRY
+    - ["SMSPEC", "UNRST"]    # outros usam UNRST
+  required_files_all_of:
+    - ["DATA"]               # deck precisa existir
+
+entities:
+  producers: ["NA1A", "NA2", "NA3D", "RJS19"]
+  injectors: ["I1", "I2", "I3", "I4", "I5", "I6"]
+
+variables:
+  well:
+    - "WOPR"
+    - "WWPR"
+    - "WBHP"
+    - "WOPT"
+    - "WWPT"
+    - "WWIR"
+    - "WWIT"
+  field:
+    - "FOPT"
+    - "FWPT"
+    - "FWIT"

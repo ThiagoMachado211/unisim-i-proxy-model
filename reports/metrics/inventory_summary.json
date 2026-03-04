@@ -1,0 +1,13 @@
+{
+  "n_cases_found": 20,
+  "n_ok": 20,
+  "n_not_ok": 0,
+  "required": [
+    "DATA",
+    "SMSPEC",
+    "UNRST",
+    "UNSMRY"
+  ],
+  "raw_dir": "C:\\Users\\Usu\u00e1rio\\Desktop\\UNISIM_PROXY_PROJECT\\data\\raw",
+  "inventory_file": "C:\\Users\\Usu\u00e1rio\\Desktop\\UNISIM_PROXY_PROJECT\\data\\extracted\\cases_inventory.csv"
+}
