@@ -1,21 +1,39 @@
-# python
+# Python
 __pycache__/
 *.pyc
+*.pyo
+*.pyd
 
-# jupyter
-.ipynb_checkpoints
-
-# environment
+# Virtual environments
 venv/
-.env
+.env/
 
-# large data
-data/raw/*
-data/processed/*.parquet
+# Large datasets
+data/raw/
+data/extracted/
+data/processed/
 
-# models
-models/saved_models/*.joblib
+# Models
+outputs/
+models/
+*.joblib
+*.pkl
 
-# system
+# Logs
+*.log
+
+# System files
 .DS_Store
 Thumbs.db
+
+# VSCode
+.vscode/
+
+# Notebooks checkpoints
+.ipynb_checkpoints/
+
+# Parquet files
+*.parquet
+
+# Benchmark outputs
+reports/
