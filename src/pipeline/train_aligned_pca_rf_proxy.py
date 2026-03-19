@@ -27,27 +27,45 @@ def build_case_level_dataset(df, target_col=TARGET_CURVE):
     Columns = timesteps
     """
 
-    base_features = [c for c in df.columns if (
-        (("_i" in c) or ("_j" in c) or ("_k1" in c) or ("_k2" in c) or ("rate" in c) or ("bhpmax" in c))
-        and not c.startswith("_")
-    )]
+    base_features = [
+        c for c in df.columns
+        if (
+            (("_i" in c) or ("_j" in c) or ("_k1" in c) or ("_k2" in c) or ("rate" in c) or ("bhpmax" in c))
+            and not c.startswith("_")
+            and c != "case_id"
+        )
+    ]
 
+    # Seleciona as features de caso
+    X_case = df.loc[:, ["case_id"] + base_features].copy()
+
+    # Garante que não exista ambiguidade de índice
+    X_case = X_case.reset_index(drop=True).rename_axis(None, axis=0)
+
+    # Uma linha por caso, pegando a primeira ocorrência
     X_case = (
-        df[["case_id"] + base_features]
-        .drop_duplicates(subset=["case_id"])
-        .sort_values("case_id")
+        X_case
+        .groupby("case_id", as_index=False)
+        .first()
+        .sort_values(by="case_id")
         .reset_index(drop=True)
     )
 
     curves = (
         df[["case_id", "t_days", target_col]]
-        .pivot_table(index="case_id", columns="t_days", values=target_col, aggfunc="mean")
+        .pivot_table(
+            index="case_id",
+            columns="t_days",
+            values=target_col,
+            aggfunc="mean",
+        )
         .sort_index(axis=1)
         .sort_index()
     )
 
     t_grid = np.array(curves.columns, dtype=float)
 
+    # Reindexa para garantir mesma ordem dos casos
     X_case = X_case.set_index("case_id").loc[curves.index].reset_index()
 
     return X_case, curves, t_grid, base_features
